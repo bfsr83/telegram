@@ -19,3 +19,8 @@ def start(bot, update):
     )
 
 from telegram.ext import CommandHandler
+
+dispatcher.add_handler(CommandHandler('start', start))
+
+updater.start_polling()
+updater.idle()
