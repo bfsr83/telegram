@@ -1,23 +1,9 @@
-from telegram.ext import Updater, InlineQueryHandler, CommandHandler
-import requests
-import re
+import telebot # Importamos las librería
 
-def get_url():
-    contents = requests.get('https://random.dog/woof.json').json()    
-    url = contents['url']
-    return url
+TOKEN = '992968153:AAHAMmgFVvJ5ARxKoY6Wwxdgp81bZiQbpQM' # Ponemos nuestro Token generado con el @BotFather
 
-def bop(bot, update):
-    url = get_url()
-    chat_id = update.message.chat_id
-    bot.send_photo(chat_id=chat_id, photo=url)
+tb = telebot.TeleBot(TOKEN) # Combinamos la declaración del Token con la función de la API
 
-def main():
-    updater = Updater(992968153:AAHAMmgFVvJ5ARxKoY6Wwxdgp81bZiQbpQM)
-    dp = updater.dispatcher
-    dp.add_handler(CommandHandler('bop',bop))
-    updater.start_polling()
-    updater.idle()
+# enviar mensagem simples
 
-if __name__ == '__main__':
-    main()
+tb.send_message(chatid, text) # Ejemplo tb.send_message('109556849', 'Hola mundo!')
