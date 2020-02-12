@@ -17,3 +17,5 @@ def start(bot, update):
         text="Soy un Achicayna, que entre los primeros pobladores de      
              Canarias era el equivalente a un plebeyo."
     )
+
+from telegram.ext import CommandHandler
